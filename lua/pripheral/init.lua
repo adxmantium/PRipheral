@@ -73,6 +73,7 @@ local function createAndOpenMarkdownFile()
 			contents = getFile(template_filename)
 		end
 
+		-- write file
 		if file then
 			file:write(contents)
 			file:close()
