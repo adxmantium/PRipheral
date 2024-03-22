@@ -18,20 +18,30 @@ With this plugin, it allows me to write my PR description as I am coding it (hen
 
 ## Installation
 
+1. setup
+
 ```
 {
     "adxmantium/PRipheral",
-    cmd = "PRipheral",
+    keys = {
+		{
+			"<leader>pr",
+			":PRipheral<CR>",
+			desc = "Opens peripheral PR description markdown file for current branch",
+		},
+	},
     config = function()
         require("pripheral").setup()
     end
 }
 ```
 
+2. Add `.pripheral` to your `~/.config/git/ignore` file - this will globally gitignore the auto generated `.pripheral` dir that this plugin creates
+
 ## Usage
 
 `:PRipheral` will open (and create if one doesn't exist) a new [branch-name].md file in a split buffer. This file will live in a .PRipheral directory which will be created if it doesn't exist.
 
-## Roadmap
+I recommend mapping this command to something easier to type, for example, I map it to `<leader>pr`.
 
-1. Add/verify support for git worktrees
+This works with branches and worktree workflows.
