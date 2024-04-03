@@ -58,7 +58,7 @@ end
 
 -- creates md file in source dir
 local function createAndOpenMarkdownFile()
-	local branch = gitCurrentBranchName()
+	local branch = string.gsub(gitCurrentBranchName(), "/", "-")
 	local file_name = getSourceDir() .. branch .. ".md"
 
 	-- if file doesn't exist yet, create it, else just open the existing file
