@@ -8,6 +8,9 @@ local function gitCurrentBranchName()
 	-- Remove trailing newline character
 	branch = string.gsub(branch, "\n", "")
 
+	-- replace / with -
+	branch = string.gsub(branch, "/", "-")
+
 	-- Return the branch name
 	return branch
 end
